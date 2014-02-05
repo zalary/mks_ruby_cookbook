@@ -11,8 +11,7 @@ class Cookbook
     @recipes
   end
 
-  # def add_recipe(recipe)  adds recipe class instance (with all its methods ie .title, .ingredients, .steps)
-  #                         to (cookbook) class variable @recipes
+  def add_recipe(recipe) # adds recipe class instance (with all its methods ie .title, .ingredients, .steps) to (cookbook) class variable @recipes
     @recipes << recipe
     puts "Added a recipe to the collection: #{recipe.title}"
   end
@@ -25,7 +24,15 @@ class Cookbook
     @recipes.each { |recipe| puts "These are the ingredients for the #{recipe.title}:  #{recipe.ingredients}" }
   end
 
- end
+  def print_cookbook
+    @recipes.each do |recipe|
+      puts "Recipe tite: #{recipe.title}"
+      puts "Ingredients list: #{recipe.ingredients.join(", ")}"
+      puts "Preparation steps: #{recipe.steps.join(", ")}"
+    end
+  end
+
+end
 
 class Recipe
 
