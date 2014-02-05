@@ -24,13 +24,25 @@ class Cookbook
     @recipes.each { |recipe| puts "These are the ingredients for the #{recipe.title}:  #{recipe.ingredients}" }
   end
 
-  def print_cookbook
-    @recipes.each do |recipe|
-      puts "Recipe tite: #{recipe.title}"
-      puts "Ingredients list: #{recipe.ingredients.join(", ")}"
-      puts "Preparation steps: #{recipe.steps.join(", ")}"
+  # def print_cookbook
+  #   @recipes.each do |recipe|
+  #     puts "Recipe tite: #{recipe.title}"
+  #     puts "Ingredients list: #{recipe.ingredients.join(", ")}"
+  #     puts "Preparation steps: #{recipe.steps.join(", ")}"
+  #   end
+  # end
+
+  def print_cookbook # Forrest's code
+    @recipes.each do |x|
+    p "To make a #{x.title}, get #{x.ingredients.join(' and ')} and do this:"#
+      i=1
+      x.steps.each do |y|
+        puts "#{i.to_s}. #{y}"
+        i+=1
+      end
     end
   end
+
 
 end
 
