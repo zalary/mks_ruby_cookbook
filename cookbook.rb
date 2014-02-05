@@ -6,11 +6,12 @@ class Cookbook
   end
 
   def recipes
-    @recipes    
+    @recipes
   end
 
   def add_recipe(recipe_title)
     @recipes << recipe_title
+    puts "Added a recipe to the collection: #{recipe_title.title}"
   end
 
  end
